@@ -16,7 +16,11 @@ export const AddToDoComponent: FC = observer(() => {
 
   return (
     <div className={style.AddComponent}>
-      <Input value={toDo} onChange={(e) => setTodo(e.target.value)} />
+      <Input
+        disableUnderline
+        value={toDo}
+        onChange={(e) => setTodo(e.target.value)}
+      />
       <Button onClick={addhandler}>Добавить</Button>
     </div>
   );

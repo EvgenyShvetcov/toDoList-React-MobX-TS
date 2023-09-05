@@ -1,5 +1,8 @@
 .AddComponent {
   display: flex;
+  height: 100px;
   align-items: center;
   border-bottom: 2px solid rgb(197, 197, 197);
+  padding: 20px;
+  justify-content: space-between;
 }

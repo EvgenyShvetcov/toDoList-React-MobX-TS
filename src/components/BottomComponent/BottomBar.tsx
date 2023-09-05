@@ -12,14 +12,14 @@ export const BottomBar: FC = observer(() => {
     todosStore.deleteCompletedTodo();
   };
 
-  const tabsSwitchHandler = (tab: string) => {
-    if (tab === "All") {
+  const tabsSwitchHandler = (tab: Tab) => {
+    if (tab === Tab.All) {
       tabsStore.switchTab(Tab.All);
     }
-    if (tab === "Active") {
+    if (tab === Tab.Active) {
       tabsStore.switchTab(Tab.Active);
     }
-    if (tab === "Completed") {
+    if (tab === Tab.Completed) {
       tabsStore.switchTab(Tab.Completed);
     }
   };
@@ -33,7 +33,7 @@ export const BottomBar: FC = observer(() => {
         <div
           className={style.bottomButton}
           onClick={() => {
-            tabsSwitchHandler("All");
+            tabsSwitchHandler(Tab.All);
           }}
         >
           All
@@ -41,7 +41,7 @@ export const BottomBar: FC = observer(() => {
         <div
           className={style.bottomButton}
           onClick={() => {
-            tabsSwitchHandler("Active");
+            tabsSwitchHandler(Tab.Active);
           }}
         >
           Active
@@ -49,7 +49,7 @@ export const BottomBar: FC = observer(() => {
         <div
           className={style.bottomButton}
           onClick={() => {
-            tabsSwitchHandler("Completed");
+            tabsSwitchHandler(Tab.Completed);
           }}
         >
           Completed

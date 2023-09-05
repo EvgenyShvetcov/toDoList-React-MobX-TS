@@ -31,9 +31,11 @@ export const Board = observer(() => {
   return (
     <div className={style.board}>
       <AddToDoComponent />
-      {todos.map((el) => (
-        <ToDoCard {...el} key={el.id} />
-      ))}
+      <div className={style.boardTodos}>
+        {todos.map((el) => (
+          <ToDoCard {...el} key={el.id} />
+        ))}
+      </div>
       <BottomBar />
     </div>
   );
