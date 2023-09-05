@@ -1,0 +1,26 @@
+.bottomBar {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  .incompleteTodos {
+    margin: 0 20px;
+  }
+  .tabs {
+    display: flex;
+  }
+  .bottomButton {
+    margin: 0 20px;
+    padding: 10px;
+    &:hover {
+      background-color: rgb(228, 227, 227);
+    }
+  }
+
+  .tab {
+    @extend .bottomButton;
+  }
+}
