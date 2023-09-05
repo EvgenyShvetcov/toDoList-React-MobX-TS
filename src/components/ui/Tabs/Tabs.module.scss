@@ -1,0 +1,26 @@
+@use "../../../variables.scss";
+
+.tabs {
+  display: flex;
+  .tab {
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(228, 227, 227);
+    }
+  }
+
+  .tabActive {
+    margin: 0 20px;
+    border-radius: 5px;
+    padding: 10px;
+    border: variables.$primary-border;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(209, 209, 209);
+    }
+  }
+}

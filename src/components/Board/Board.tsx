@@ -37,6 +37,9 @@ export const Board = observer(() => {
         ))}
       </div>
       <BottomBar />
+      <div className={style.board2}>
+        <div className={style.board3}></div>
+      </div>
     </div>
   );
 });

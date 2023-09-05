@@ -1,8 +1,26 @@
+@use "../../variables.scss";
+
 .AddComponent {
   display: flex;
   height: 100px;
   align-items: center;
   border-bottom: 2px solid rgb(197, 197, 197);
-  padding: 20px;
+  padding: 20px 35px;
   justify-content: space-between;
+  .icon {
+    font-size: 60px;
+    color: variables.$secondary-color;
+  }
+  .inputTodo {
+    margin-left: 30px;
+    font-size: 40px;
+    font-weight: 300;
+    color: variables.$secondary-color;
+  }
+  .inputTodoInUse {
+    margin-left: 30px;
+    font-size: 40px;
+    font-weight: 300;
+    color: variables.$active-color;
+  }
 }

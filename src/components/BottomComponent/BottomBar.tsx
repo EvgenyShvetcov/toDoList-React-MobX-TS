@@ -3,58 +3,21 @@ import style from "./BottomBar.module.scss";
 import { useStores } from "../../useStores";
 import { observer } from "mobx-react-lite";
 import { FC } from "react";
-import { Tab } from "../../types";
+import { Tabs } from "../ui/Tabs/Tabs";
 
 export const BottomBar: FC = observer(() => {
-  const { tabsStore, todosStore } = useStores();
+  const { todosStore } = useStores();
 
   const deleteCompletedHandler = () => {
     todosStore.deleteCompletedTodo();
   };
 
-  const tabsSwitchHandler = (tab: Tab) => {
-    if (tab === Tab.All) {
-      tabsStore.switchTab(Tab.All);
-    }
-    if (tab === Tab.Active) {
-      tabsStore.switchTab(Tab.Active);
-    }
-    if (tab === Tab.Completed) {
-      tabsStore.switchTab(Tab.Completed);
-    }
-  };
-
   return (
     <div className={style.bottomBar}>
       <div className={style.incompleteTodos}>
-        {todosStore.incompleteTodos.length + " items left"}{" "}
+        {todosStore.incompleteTodos.length + " items left"}
       </div>
-      <div className={style.tabs}>
-        <div
-          className={style.bottomButton}
-          onClick={() => {
-            tabsSwitchHandler(Tab.All);
-          }}
-        >
-          All
-        </div>
-        <div
-          className={style.bottomButton}
-          onClick={() => {
-            tabsSwitchHandler(Tab.Active);
-          }}
-        >
-          Active
-        </div>
-        <div
-          className={style.bottomButton}
-          onClick={() => {
-            tabsSwitchHandler(Tab.Completed);
-          }}
-        >
-          Completed
-        </div>
-      </div>
+      <Tabs />
       <div className={style.bottomButton} onClick={deleteCompletedHandler}>
         Clear completed
       </div>
