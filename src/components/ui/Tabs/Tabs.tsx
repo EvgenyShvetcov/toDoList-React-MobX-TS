@@ -29,7 +29,7 @@ export const Tabs: FC = observer(() => {
             tabsSwitchHandler(Tab.All);
           }}
         >
-          All
+          {Tab.All}
         </div>
         <div
           className={tabsStore.tab === Tab.Active ? style.tabActive : style.tab}
@@ -37,7 +37,7 @@ export const Tabs: FC = observer(() => {
             tabsSwitchHandler(Tab.Active);
           }}
         >
-          Active
+          {Tab.Active}
         </div>
         <div
           className={
@@ -47,7 +47,7 @@ export const Tabs: FC = observer(() => {
             tabsSwitchHandler(Tab.Completed);
           }}
         >
-          Completed
+          {Tab.Completed}
         </div>
       </div>
     </div>

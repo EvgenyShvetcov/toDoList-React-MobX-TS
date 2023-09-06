@@ -10,12 +10,14 @@ export const AddToDoComponent: FC = observer(() => {
   const [toDo, setTodo] = useState<string>("");
 
   const addhandler = () => {
-    todosStore.createTodo(toDo);
-    setTodo("");
+    if (toDo !== "") {
+      todosStore.createTodo(toDo);
+      setTodo("");
+    }
   };
 
   const addhandlerOnEnter = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
+    if (toDo !== "" && e.key === "Enter") {
       todosStore.createTodo(toDo);
       setTodo("");
     }
@@ -25,6 +27,7 @@ export const AddToDoComponent: FC = observer(() => {
     <div className={style.AddComponent}>
       <KeyboardArrowDownIcon className={style.icon} />
       <Input
+        data-testid="enterTodoInput"
         className={toDo ? style.inputTodoInUse : style.inputTodo}
         placeholder="What needs to be done?"
         disableUnderline
@@ -33,7 +36,9 @@ export const AddToDoComponent: FC = observer(() => {
         fullWidth
         onKeyDown={addhandlerOnEnter}
       />
-      <Button onClick={addhandler}>Добавить</Button>
+      <Button data-testid="enterTodoButton" onClick={addhandler}>
+        Добавить
+      </Button>
     </div>
   );
 });
