@@ -5,7 +5,7 @@ import { FC } from "react";
 
 interface Props {
   checked: boolean;
-  onChange: () => void;
+  onChange?: () => void;
 }
 
 export const RoundCheckbox: FC<Props> = ({ checked, onChange }) => {
